@@ -1,0 +1,324 @@
+@font-face {
+  font-family: "Roboto Regular";
+  src: url(./fonts/roboto/Roboto-Regular.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Roboto Light";
+  src: url(./fonts/roboto/Roboto-Light.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Roboto Bold";
+  src: url(./fonts/roboto/Roboto-Bold.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Roboto Condensed Bold";
+  src: url(./fonts/roboto/RobotoCondensed-Bold.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Roboto Black";
+  src: url(./fonts/roboto/Roboto-Black.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Roboto Medium";
+  src: url(./fonts/roboto/Roboto-Medium.ttf) format("truetype");
+}
+html {
+  box-sizing: border-box;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(./images/wood-carving.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto Regular", sans-serif;
+}
+
+p,
+input,
+button,
+div,
+a {
+  color: #fff;
+  font-family: "Roboto Regular", sans-serif;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+ul li {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+
+a {
+  text-decoration: none;
+  font-family: "Roboto Regular", sans-serif;
+  transition: color 0.8s ease-in-out;
+}
+a:hover {
+  color: #2b9aed;
+}
+
+header {
+  position: relative;
+  display: flex;
+  margin: 20px;
+}
+header .logo {
+  display: inline-block;
+  align-self: flex-end;
+}
+header .main-menu {
+  display: none;
+  align-self: flex-end;
+}
+header .side-menu {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  align-self: flex-end;
+}
+header .side-menu .burger-menu {
+  cursor: pointer;
+}
+header .side-menu .burger-menu div {
+  width: 35px;
+  height: 5px;
+  margin: 3px 0;
+  border-radius: 10px;
+  background-color: #fff;
+}
+header .side-menu #hidden-menu {
+  position: absolute;
+  width: 200px;
+  padding: 10px;
+  opacity: 0;
+  right: 0;
+  transition: opacity 0.5s ease-in-out;
+  text-align: right;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+header .side-menu #hidden-menu.show {
+  opacity: 1;
+}
+header .side-menu #hidden-menu .menu-items .item {
+  display: block;
+  font-size: 1.5rem;
+  margin: 0px;
+}
+header .menu-items .item {
+  font-size: 1.5rem;
+  margin: 0px 15px;
+}
+header .menu-items .item a {
+  font-family: "Roboto Light", sans-serif;
+}
+
+@media screen and (min-width: 768px) {
+  header {
+    display: flex;
+    align-items: stretch;
+    margin: 30px 60px;
+  }
+  header .main-menu {
+    display: inline-block;
+    margin: 0 auto;
+  }
+  header .side-menu {
+    position: relative;
+    transform: none;
+  }
+}
+@media screen and (min-width: 1024px) {
+  header .main-menu .menu-items .item {
+    margin: 0px 25px;
+  }
+}
+section.content {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin: 20px;
+}
+section.content .left-content {
+  width: 100%;
+  margin-bottom: 20px;
+}
+section.content .left-content .title {
+  margin-bottom: 15px;
+  font-family: "Roboto Medium", sans-serif;
+}
+section.content .left-content .subtitle {
+  color: #a2a3a5;
+}
+section.content .right-content {
+  width: 100%;
+}
+section.content .right-content .form-title {
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+section.content .right-content form {
+  border-radius: 5px;
+  position: relative;
+}
+section.content .right-content form input[type=text],
+section.content .right-content form input[type=email],
+section.content .right-content form input[type=password] {
+  box-sizing: border-box;
+  display: block;
+  background-color: transparent;
+  border: none;
+  border-left: 1px solid #a2a3a5;
+  border-right: 1px solid #a2a3a5;
+  border-bottom: 1px solid #a2a3a5;
+  font-size: 1rem;
+  color: #a2a3a5;
+  padding: 20px;
+  margin: 0px;
+  width: 100%;
+}
+section.content .right-content form input[type=text]::placeholder,
+section.content .right-content form input[type=email]::placeholder,
+section.content .right-content form input[type=password]::placeholder {
+  color: #a2a3a5;
+}
+section.content .right-content form input[name=name] {
+  border-top: 1px solid #a2a3a5;
+  border-radius: 5px 5px 0px 0px;
+}
+section.content .right-content form input[type=submit] {
+  background-color: #2b9aed;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0px 0px 5px 5px;
+  transition: all 1s ease-in-out;
+  border: 1px solid #2b9aed;
+}
+section.content .right-content form input[type=submit]:hover {
+  background-color: #fff;
+  color: #2b9aed;
+}
+section.content .right-content form .password {
+  position: relative;
+}
+section.content .right-content form .password .show-password {
+  cursor: pointer;
+  position: absolute;
+  color: #a2a3a5;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+}
+section.content .right-content .form-service {
+  padding: 20px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #a2a3a5;
+  line-height: 1.5;
+}
+section.content .right-content .form-service span {
+  display: block;
+  color: #fff;
+}
+
+@media screen and (min-width: 768px) {
+  section.content {
+    flex-wrap: nowrap;
+    flex-direction: row;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+  }
+  section.content .left-content {
+    width: 50%;
+    padding: 5%;
+    margin-top: 25px;
+  }
+  section.content .left-content .title {
+    font-size: 3rem;
+  }
+  section.content .left-content .subtitle {
+    font-size: 1rem;
+  }
+  section.content .right-content {
+    width: 50%;
+    padding: 5%;
+  }
+  section.content .right-content .form-title {
+    font-size: 1rem;
+    letter-spacing: 2px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  section.content .left-content {
+    padding-left: 10%;
+  }
+  section.content .right-content {
+    padding-right: 10%;
+  }
+}
+footer {
+  display: block;
+  margin: 20px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+footer .copyright {
+  font-size: 0.8rem;
+}
+footer .footer-menu .menu-items .item {
+  text-transform: uppercase;
+  padding: 0px 2.5px;
+  letter-spacing: 1px;
+  font-size: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  footer {
+    display: block;
+    margin: 30px 60px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    clear: both;
+  }
+  footer .copyright {
+    float: left;
+  }
+  footer .copyright p {
+    margin: 0;
+  }
+  footer .footer-menu {
+    float: right;
+  }
+  footer .footer-menu .menu-items .item {
+    text-transform: uppercase;
+    padding: 0px 10px;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

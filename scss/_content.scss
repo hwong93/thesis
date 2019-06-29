@@ -1,0 +1,136 @@
+section.content {
+	display: flex;
+	align-items: stretch;
+	flex-wrap: wrap;
+	flex-direction: column;
+	margin: 20px;
+	.left-content {
+		width: 100%;
+		margin-bottom: 20px;
+		.title {
+			margin-bottom: 15px;
+			font-family: 'Roboto Medium', sans-serif;
+		}
+		.subtitle {
+			color: $gray;
+		}
+	}
+	.right-content {
+		width: 100%;
+		.form-title {
+			display: block;
+			text-align: center;
+			text-transform: uppercase;
+			margin-bottom: 20px;
+		}
+		form {
+			border-radius: 5px;
+			position: relative;
+
+			input[type="text"],
+			input[type="email"],
+			input[type="password"] {
+				box-sizing : border-box;
+				display: block;
+				background-color: transparent;
+				border: none;
+				border-left: 1px solid $gray;
+				border-right: 1px solid $gray;
+				border-bottom: 1px solid $gray;
+				font-size: 1rem;
+				color: $gray;
+				padding: 20px;
+				margin: 0px;
+				width: 100%;
+				&::placeholder {
+					color: $gray;
+				}
+			}
+			input[name="name"] {
+				border-top: 1px solid $gray;
+				border-radius: 5px 5px 0px 0px;
+			}
+			input[type="submit"] {
+				background-color: $blue;
+				padding: 20px;
+				text-align: center;
+				width: 100%;
+				font-size: 1rem;
+				border: none;
+				border-radius: 0px 0px 5px 5px;
+				transition: all 1s ease-in-out;
+				border: 1px solid $blue;
+				&:hover {
+					background-color: $white;
+					color: $blue;
+				}
+			}
+			.password {
+				position: relative;
+				.show-password {
+					cursor: pointer;
+					position: absolute;
+					color: $gray;
+					top: 50%;
+					right: 10px;
+					transform: translateY(-50%);
+					background: none;
+					border: none;
+				}
+			}
+		}
+		.form-service {
+			padding: 20px;
+			text-align: center;
+			font-size: 0.8rem;
+			color: $gray;
+			line-height: 1.5;
+			span {
+				display: block;
+				color: $white;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 768px) {
+	section.content {
+		flex-wrap: nowrap;
+		flex-direction: row;
+		position: absolute;
+		top: 50%;
+		left: 0;
+		right: 0;
+    transform: translateY(-50%);
+		.left-content {
+			width: 50%;
+			padding: 5%;
+			margin-top: 25px;
+			.title {
+				font-size: 3rem;
+			}
+			.subtitle {
+				font-size: 1rem;
+			}
+		}
+		.right-content {
+			width: 50%;
+			padding: 5%;
+			.form-title {
+				font-size: 1rem;
+				letter-spacing: 2px;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	section.content {
+		.left-content {
+			padding-left: 10%;
+		}
+		.right-content {
+			padding-right: 10%;
+		}
+	}
+}

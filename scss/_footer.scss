@@ -1,0 +1,47 @@
+footer {
+	display: block;
+	margin: 20px;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	.copyright {
+		font-size: 0.8rem;
+	}
+	.footer-menu {
+		.menu-items {
+			.item {
+				text-transform: uppercase;
+				padding: 0px 2.5px;
+				letter-spacing: 1px;
+				font-size: 1rem;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 768px) {
+	footer {
+		display: block;
+		margin: 30px 60px;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		clear: both;
+		.copyright {
+			float: left;
+			p {
+				margin: 0;
+			}
+		}
+		.footer-menu {
+			float: right;
+			.menu-items {
+				.item {
+					text-transform: uppercase;
+					padding: 0px 10px;
+				}
+			}
+		}
+	}
+}
